@@ -12,7 +12,7 @@ else
 	while read a b c; do
 		if [[ ${array[$c]} != "$a::$b" ]]
 		then
-			echo "[Name::Type::Value]:$c::${array[$c]} -----> $c::$a::$b"
+			echo "[Name::Type::Value] $c::${array[$c]} -----> $c::$a::$b"
 		fi;
 	done <$2
 fi;

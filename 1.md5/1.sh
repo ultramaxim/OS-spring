@@ -1,5 +1,6 @@
-while read a b; do
-	while read c && [[ -n $c ]]; do
-		echo "$c  $a $b";
+declare -a array
+while read b c; do
+	while read a && [[ -n $a ]]; do
+		array[$a]="$b $c";
 	done 
 done <$1

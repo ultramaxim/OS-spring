@@ -1,4 +1,3 @@
-cat $1 | while read line
-do
- echo $line
-done
+while read one two; do
+	echo "$one  $two";
+done <$1

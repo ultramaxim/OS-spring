@@ -1,4 +1,4 @@
-if test -z "$1"
+if [[ -z "$1" ]]
 then 
 	echo "Usage: 1.sh filenameFirst filenameSecond"
 else

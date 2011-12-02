@@ -16,5 +16,8 @@ int main()
 {
   	sprinf(info,"PID: %d; GID %d\n",getpid(),getpgid(getpid()));
 	write(1,info,strlen(info));
-	
+	struct sigaction sa;
+	sa.sa_sigaction=term_handler;
+	sa.sa_flags=SA_SIGINFO;
+	sigfillset(&sa.sa_mask);	
 }

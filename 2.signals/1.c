@@ -1,11 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <signal.h>
+#include <string.h>
 
-void term_handler(int sig) 
+char info[100];
+
+void term_handler(int i,siginfo_t *c,void *v) 
 {
-  printf("Signal %i - %s\n", sig, sys_siglist[sig]);
-  exit(EXIT_SUCCESS);
+  write(1,info,strlen(info));
+  
 }
 
 int main(int argc, char ** argv) 

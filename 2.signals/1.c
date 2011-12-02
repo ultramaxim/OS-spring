@@ -20,6 +20,7 @@ int main()
 	sa.sa_sigaction=term_handler;
 	sa.sa_flags=SA_SIGINFO;
 	sigfillset(&sa.sa_mask);	
+	
 	int i;
 	for(i=1;i<32;i++)
 	{

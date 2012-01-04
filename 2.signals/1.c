@@ -30,7 +30,7 @@ int main()
 	for(i=1;i<32;i++)
 		if(i!=9 && i!=19 && sigaction(i,&sa,NULL))
 		{
-			printf("Error: %d\n",i);
+			printf("Can't set signal %d\n",i);
 			return 2;
 		}
 

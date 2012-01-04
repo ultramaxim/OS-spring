@@ -1,0 +1,1 @@
+gcc -O0 -lpthread -o 1 1.c && time ./1

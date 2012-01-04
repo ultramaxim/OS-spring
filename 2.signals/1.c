@@ -28,9 +28,11 @@ int main()
 	
 	int i;
 	for(i=1;i<32;i++)
-		if(i!=9 && i!=19)
-			if(sigaction(i,&sa,0)==-1)
-				printf("Error: %d\n",i);
+		if(i!=9 && i!=19 && sigaction(i,&sa,NULL))
+		{
+			printf("Error: %d\n",i);
+			return 2;
+		}
 
 	while(1) sleep(1);
 

@@ -9,7 +9,7 @@ static void* func( void* id )
 {
 	int self  = (int)id;
     	int other = 1 - self;
-	volatile int countdown = 1000000;
+	volatile int countdown = 100000000;
     	
 	while( countdown >= 0 ) 
    	{

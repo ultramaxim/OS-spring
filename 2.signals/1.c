@@ -1,8 +1,7 @@
-c#include <stdio.h>
+#include <stdio.h>
 #include <unistd.h>//for pipe
 #include <stdlib.h>
 #include <signal.h>
-#include <string.h>
 
 int channel[2];
 
@@ -21,7 +20,7 @@ void func(int i,siginfo_t *info,void *empty)
 	packet.sender_pid = info->si_pid;
 	packet.sender_gid = getpgid(info->si_pid);
 	packet.sender_uid = info->si_uid;
-	write(channel[1],&packet,sizeof(packet));	
+	write(channel[1],&packet,sizeof(packet));
 }
 
 int main() 
@@ -46,7 +45,6 @@ int main()
 			printf("Can't set signal %d\n",i);
 			return 3;
 		}
-	
 	struct packet pack;
 	do
 	{
@@ -58,6 +56,13 @@ int main()
 			printf("sender_pid=%d\nsender_gid=%d\nsender_uid=%d\n",pack.sender_pid,pack.sender_gid,pack.sender_uid);
 			printf("-----------------------");
 		}
+		else if(read_result==-1)
+		{
+			puts("Read Error");
+			return 4;
+		}
+		else
+			d.number=-1
 	}
 	while(d.number != 20);
 

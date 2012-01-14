@@ -1,5 +1,151 @@
-My pid is 4151
-^CSignal 2 - Interrupt
-^ZSignal 20 - Stopped
-^\Signal 3 - Quit
+My pid 2615
+Signal 0 send
+Signal 1 send
+Signal 2 send
+Signal 3 send
+Signal 4 send
+Signal 5 send
+Signal 6 send
+Signal 7 send
+Signal 8 send
+Signal 10 send
+Signal 11 send
+Signal 12 send
+Signal 13 send
+Signal 14 send
+Signal 15 send
+Signal 16 send
+Signal 17 send
+Signal 18 send
+Signal 21 send
+Signal 22 send
+Signal 23 send
+Signal 24 send
+Signal 25 send
+Signal 26 send
+Signal 27 send
+Signal 28 send
+Signal 29 send
+Signal 30 send
+Signal 31 send
+ExitSignal Send
+Signal 1
+signo=1
+mypid=2615
+mygid=2614
+sender_pid=2614
+sender_gid=2614
+sender_uid=1000
+Signal 2
+signo=2
+mypid=2615
+mygid=2614
+sender_pid=2614
+sender_gid=2614
+sender_uid=1000
+Signal 3
+signo=3
+mypid=2615
+mygid=2614
+sender_pid=2614
+sender_gid=2614
+sender_uid=1000
+Signal 4
+signo=4
+mypid=2615
+mygid=2614
+sender_pid=2614
+sender_gid=2614
+sender_uid=1000
+Signal 5
+signo=5
+mypid=2615
+mygid=2614
+sender_pid=2614
+sender_gid=2614
+sender_uid=1000
+Signal 6
+signo=6
+mypid=2615
+mygid=2614
+sender_pid=2614
+sender_gid=2614
+sender_uid=1000
+Signal 7
+signo=7
+mypid=2615
+mygid=2614
+sender_pid=2614
+sender_gid=2614
+sender_uid=1000
+Signal 8
+signo=8
+mypid=2615
+mygid=2614
+sender_pid=2614
+sender_gid=2614
+sender_uid=1000
+Signal 10
+signo=10
+mypid=2615
+mygid=2614
+sender_pid=2614
+sender_gid=2614
+sender_uid=1000
+Signal 11
+signo=11
+mypid=2615
+mygid=2614
+sender_pid=2614
+sender_gid=2614
+sender_uid=1000
+Signal 12
+signo=12
+mypid=2615
+mygid=2614
+sender_pid=2614
+sender_gid=2614
+sender_uid=1000
+Signal 13
+signo=13
+mypid=2615
+mygid=2614
+sender_pid=2614
+sender_gid=2614
+sender_uid=1000
+Signal 14
+signo=14
+mypid=2615
+mygid=2614
+sender_pid=2614
+sender_gid=2614
+sender_uid=1000
+Signal 15
+signo=15
+mypid=2615
+mygid=2614
+sender_pid=2614
+sender_gid=2614
+sender_uid=1000
+Signal 16
+signo=16
+mypid=2615
+mygid=2614
+sender_pid=2614
+sender_gid=2614
+sender_uid=1000
+Signal 17
+signo=17
+mypid=2615
+mygid=2614
+sender_pid=2614
+sender_gid=2614
+sender_uid=1000
+Signal 20
+signo=20
+mypid=2615
+mygid=2614
+sender_pid=2614
+sender_gid=2614
+sender_uid=1000
 

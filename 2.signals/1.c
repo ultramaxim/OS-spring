@@ -45,15 +45,15 @@ int main()
 			printf("Can't set signal %d\n",i);
 			return 3;
 		}
-	struct packet pack;
+	struct packet p;
 	do
 	{
-		int read_result=read(channel[0],&pack,sizeof(pack));
+		int read_result=read(channel[0],&p,sizeof(p));
 		if(read_result>0)
 		{
 			printf("-----------------------");
-			printf("Signal %d\nsigno=%d\nmypid=%d\nmygid=%d\n",pack.number,pack.signo,pack.mypid,pack.mygid);
-			printf("sender_pid=%d\nsender_gid=%d\nsender_uid=%d\n",pack.sender_pid,pack.sender_gid,pack.sender_uid);
+			printf("Signal %d\nsigno=%d\nmypid=%d\nmygid=%d\n",p.number,p.signo,p.mypid,p.mygid);
+			printf("sender_pid=%d\nsender_gid=%d\nsender_uid=%d\n",p.sender_pid,p.sender_gid,p.sender_uid);
 			printf("-----------------------");
 		}
 		else if(read_result==-1)
@@ -62,9 +62,9 @@ int main()
 			return 4;
 		}
 		else
-			pack.number=-1;
+			p.number=-1;
 	}
-	while(pack.number != 20);
+	while(p.number != 20);
 
 	return 0;
 }

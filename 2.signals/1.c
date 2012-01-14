@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>//for pipe
-#include <stdlib.h>
 #include <signal.h>
+#include <errno.h>
 
 int channel[2];
 
@@ -51,12 +51,11 @@ int main()
 		int read_result=read(channel[0],&p,sizeof(p));
 		if(read_result>0)
 		{
-			printf("-----------------------");
-			printf("Signal %d\nsigno=%d\nmypid=%d\nmygid=%d\n",p.number,p.signo,p.mypid,p.mygid);
+			printf("------------\n");
+			printf("\nSignal %d\nsigno=%d\nmypid=%d\nmygid=%d\n",p.number,p.signo,p.mypid,p.mygid);
 			printf("sender_pid=%d\nsender_gid=%d\nsender_uid=%d\n",p.sender_pid,p.sender_gid,p.sender_uid);
-			printf("-----------------------");
 		}
-		else if(read_result==-1)
+		else if(read_result==-1 && errno!=EINTR)
 		{
 			puts("Read Error");
 			return 4;

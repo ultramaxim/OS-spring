@@ -1,4 +1,4 @@
-#include <stdio.h>
+c#include <stdio.h>
 #include <unistd.h>//for pipe
 #include <stdlib.h>
 #include <signal.h>
@@ -53,7 +53,11 @@ int main()
 		int read_result=read(pair[0],&pack,sizeof(pack));
 		if(read_result>0)
 		{
-			printf("Signal");
+			printf("-----------------------");
+			printf("Signal %d\nsigno=%d\nmypid=%d\nmygid=%d\n",pack.number,pack.signo,pack.mypid,pack.mygid);
+			printf("sender_pid=%d\nsender_gid=%d\nsender_uid=%d\n",pack.sender_pid,pack.sender_gid,pack.sender_uid);
+			printf("-----------------------");
+		}
 	}
 	while(d.number != 20);
 

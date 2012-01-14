@@ -1,0 +1,15 @@
+./$1 & # в фоне
+pid=$!
+echo My pid $pid
+sleep 1
+for ((i=0;i<32;i++));
+do
+	if((i!=9 && i!=19 && i!= 20))
+	then
+		echo Signal $i send
+		kill -n $i $pid
+	fi;
+done
+
+echo ExitSignal Send
+kill -n 20 $pid

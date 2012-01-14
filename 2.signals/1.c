@@ -6,9 +6,22 @@
 
 int channel[2];
 
-void func(int i,siginfo_t *c,void *v) 
+struct packet
 {
-	
+	int number,signo,mypid,mygid,sender_pid,sender_gid,sender_uid;
+};
+
+void func(int i,siginfo_t *info,void *empty) 
+{
+	struct packet packet;
+	packet.number = i;
+	packet.signo = info->si_signo;
+	packet.mypid = getpid();
+	packet.mygid = getpgrp();
+	packet.sender_pid = info->si_pid;
+	packet.sender_gid = getpgid(info->si_pid);
+	packet.sender_uid = info->si_uid;
+	write(channel[1],&packet,sizeof(packet));	
 }
 
 int main() 

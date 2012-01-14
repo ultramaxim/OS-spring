@@ -48,7 +48,7 @@ int main()
 	struct packet pack;
 	do
 	{
-		int read_result=read(pair[0],&pack,sizeof(pack));
+		int read_result=read(channel[0],&pack,sizeof(pack));
 		if(read_result>0)
 		{
 			printf("-----------------------");
@@ -62,9 +62,9 @@ int main()
 			return 4;
 		}
 		else
-			d.number=-1
+			pack.number=-1;
 	}
-	while(d.number != 20);
+	while(pack.number != 20);
 
 	return 0;
 }

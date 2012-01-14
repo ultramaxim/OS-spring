@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include<unistd.h>//for pipe
+#include <unistd.h>//for pipe
 #include <stdlib.h>
 #include <signal.h>
 #include <string.h>
@@ -44,10 +44,18 @@ int main()
 		if(i!=9 && i!=19 && sigaction(i,&sa,NULL))
 		{
 			printf("Can't set signal %d\n",i);
-			return 3\;
+			return 3;
 		}
-
-	while(1) sleep(1);
+	
+	struct packet pack;
+	do
+	{
+		int read_result=read(pair[0],&pack,sizeof(pack));
+		if(read_result>0)
+		{
+			printf("Signal");
+	}
+	while(d.number != 20);
 
 	return 0;
 }

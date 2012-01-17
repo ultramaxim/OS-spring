@@ -72,13 +72,13 @@ int main()
     
 	if (pthread_setaffinity_np(thread[0], sizeof(cpu_set_t), &cpu1))
 		alert(10, "set affinity thread 1 error");	
-	if (pthread_setaffinity_np(thread[1], sizeof(cpu_set_t), &cpu1))
+	if (pthread_setaffinity_np(thread[1], sizeof(cpu_set_t), &cpu2))
 		alert(10, "set affinity thread 2 error");	
 
 	if(pthread_join(thread[0], NULL))
-		alert(10,"join thread 1 error");
+		alert(12,"join thread 1 error");
 	if(pthread_join(thread[1], NULL))
-		alert(20,"join thread 2 error");
+		alert(22,"join thread 2 error");
 	
 	printf("%d\n", val);
 	

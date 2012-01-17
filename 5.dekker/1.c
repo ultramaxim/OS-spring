@@ -5,6 +5,12 @@ volatile char flag[2] = { 0, 0 };
 volatile char turn    = 0;
 volatile int  val     = 0;
 
+void alert(int code, char* mes)
+{
+	printf(mes);
+	exit(code);
+}
+
 static void* func( void* id ) 
 {
 	int self  = (int)id;
@@ -35,11 +41,15 @@ int main() {
     
 	pthread_t thread[2];
 
-	pthread_create(&thread[0], NULL, &func, (void*)0);
-	pthread_create(&thread[1], NULL, &func, (void*)1);
+	if(pthread_create(&thread[0], NULL, &func, (void*)0))
+		alert(11,"create thread 1 error");
+	if(pthread_create(&thread[1], NULL, &func, (void*)1))
+		alert(21,"create thread 2 error");
     
-	pthread_join(thread[0], NULL);
-	pthread_join(thread[1], NULL);
+	if(pthread_join(thread[0], NULL))
+		alert(10,"join thread 1 error");
+	if(pthread_join(thread[1], NULL))
+		alert(20,"join thread 2 error");
 	
 	printf("%d\n", val);
 	
